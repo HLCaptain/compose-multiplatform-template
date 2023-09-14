@@ -15,5 +15,6 @@ plugins {
     alias(libs.plugins.android.application) apply false
     alias(libs.plugins.android.library) apply false
     alias(libs.plugins.kotlin.android) apply false
-    id("org.jetbrains.compose") version libs.versions.compose.get() apply false
+    alias(libs.plugins.sqldelight) apply false
+    alias(libs.plugins.jetbrains.compose) apply false
 }

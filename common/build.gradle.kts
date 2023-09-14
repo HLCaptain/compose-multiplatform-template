@@ -1,7 +1,8 @@
 plugins {
     kotlin("multiplatform")
-    id("org.jetbrains.compose")
     id("com.android.library")
+    alias(libs.plugins.jetbrains.compose)
+    alias(libs.plugins.sqldelight)
 }
 
 group = "com.example"
@@ -87,5 +88,13 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
+    }
+}
+
+sqldelight {
+    databases {
+        create("Database") {
+            packageName.set("com.example")
+        }
     }
 }
