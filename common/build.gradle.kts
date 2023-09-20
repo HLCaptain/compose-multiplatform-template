@@ -2,8 +2,9 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinCompile
 
 plugins {
     kotlin("multiplatform")
-    id("org.jetbrains.compose")
     id("com.android.library")
+    alias(libs.plugins.jetbrains.compose)
+    alias(libs.plugins.sqldelight)
     alias(libs.plugins.google.ksp)
 }
 
@@ -131,4 +132,12 @@ afterEvaluate {
 
 ksp {
     arg("KOIN_CONFIG_CHECK","true")
+}
+
+sqldelight {
+    databases {
+        create("Database") {
+            packageName.set("com.example")
+        }
+    }
 }
