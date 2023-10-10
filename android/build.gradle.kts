@@ -28,9 +28,6 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_17.toString()
     }
-    kotlin {
-        jvmToolchain(17)
-    }
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false
