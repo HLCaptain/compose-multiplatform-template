@@ -43,7 +43,10 @@ kotlin {
                 implementation(libs.ktor.core)
                 implementation(project.dependencies.platform(libs.koin.bom))
                 implementation(libs.koin.core)
+                implementation(project.dependencies.platform(libs.koin.annotations.bom))
+                implementation(libs.koin.annotations)
                 implementation(libs.napier)
+                implementation(libs.store)
             }
         }
 
@@ -101,33 +104,11 @@ android {
 }
 
 dependencies {
-//    add("kspCommonMainMetadata", libs.koin.ksp)
+    add("kspCommonMainMetadata", libs.koin.ksp)
     // DO NOT add bellow dependencies
-//    add("kspAndroid", Deps.Koin.kspCompiler)
-//    add("kspIosX64", Deps.Koin.kspCompiler)
-//    add("kspIosArm64", Deps.Koin.kspCompiler)
-//    add("kspIosSimulatorArm64", Deps.Koin.kspCompiler)
-    // FIXME: I DID ADD THEM
-    add("kspAndroid", libs.koin.ksp)
-//    add("kspIosX64", libs.koin.ksp)
-//    add("kspIosArm64", libs.koin.ksp)
-//    add("kspIosSimulatorArm64", libs.koin.ksp)
-    add("kspDesktop", libs.koin.ksp)
-}
-
-// WORKAROUND: ADD this dependsOn("kspCommonMainKotlinMetadata") instead of above dependencies
-tasks.withType<KotlinCompile<*>>().configureEach {
-    if (name != "kspCommonMainKotlinMetadata") {
-        dependsOn("kspCommonMainKotlinMetadata")
-    }
-}
-afterEvaluate {
-    tasks.filter {
-        it.name.contains("SourcesJar", true)
-    }.forEach {
-        println("SourceJarTask====>${it.name}")
-        it.dependsOn("kspCommonMainKotlinMetadata")
-    }
+//    add("kspAndroid", libs.koin.ksp)
+//    add("kspDesktop", libs.koin.ksp)
+//    add("kspJs", libs.koin.ksp)
 }
 
 ksp {

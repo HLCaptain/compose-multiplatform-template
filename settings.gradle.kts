@@ -7,7 +7,7 @@ pluginManagement {
     }
 }
 
-rootProject.name = "demo"
+rootProject.name = "compose-multiplatform-template"
 
 include(":android")
 include(":desktop")
