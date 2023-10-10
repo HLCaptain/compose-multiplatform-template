@@ -14,16 +14,8 @@ version = "1.0-SNAPSHOT"
 @OptIn(org.jetbrains.compose.ExperimentalComposeLibrary::class)
 kotlin {
     jvmToolchain(17)
-    androidTarget {
-        compilations.all {
-            kotlinOptions.jvmTarget = JavaVersion.VERSION_17.toString()
-        }
-    }
-    jvm("desktop") {
-        compilations.all {
-            kotlinOptions.jvmTarget = JavaVersion.VERSION_17.toString()
-        }
-    }
+    androidTarget()
+    jvm("desktop")
     js(IR) {
         browser()
     }
