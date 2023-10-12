@@ -56,6 +56,7 @@ kotlin {
                 implementation(libs.voyager.androidx)
                 implementation(libs.koin.ktor)
                 implementation(libs.koin.logger.slf4j)
+                implementation(libs.koin.android)
             }
         }
 
