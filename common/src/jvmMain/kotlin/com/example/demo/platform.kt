@@ -1,0 +1,7 @@
+package com.example.demo
+
+actual fun getPlatformName(): String {
+    return "JVM"
+}
+
+actual interface JavaSerializable
