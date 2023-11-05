@@ -2,6 +2,7 @@ package com.example.demo.ui.home
 
 import androidx.compose.animation.Crossfade
 import androidx.compose.animation.animateContentSize
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -20,6 +21,7 @@ import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.koin.getScreenModel
 import com.example.demo.Res
 import com.example.demo.getPlatformName
+import io.github.skeptick.libres.compose.painterResource
 
 class HomeScreen : Screen {
     @Composable
@@ -38,10 +40,10 @@ class HomeScreen : Screen {
             ) {
                 Column {
                     // Libres implementation:
-//                    Image(
-//                        painter = Res.image.flower_image.painterResource(),
-//                        contentDescription = "flower image"
-//                    )
+                    Image(
+                        painter = Res.image.flower_image.painterResource(),
+                        contentDescription = "flower image"
+                    )
                     // OR if using compose resources:
 //                    Image(
 //                        painter = painterResource("flower_image.jpg),
